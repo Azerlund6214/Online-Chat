@@ -38,15 +38,26 @@
 
 		
 		<style>
-			
-			#div_banner
+
+			.grad-35 { background-image: linear-gradient(45deg, #2A9EFF, #FF4968); }
+			.grad-cyan-dark-green 	 { background-image: linear-gradient(45deg, #0097a7, #b2ff59); }
+			.grad-purple-deep-orange { background-image: linear-gradient(45deg, #8e24aa, #ff6e40); }
+			.grad-plum 				 { background-image: linear-gradient(45deg, #e35c67, #381ce2); }
+			.grad-passion-fruit		 { background-image: linear-gradient(45deg, #8137F7, #F6AB3E); }
+			.grad-sublime-vivid 	 	{ background-image: linear-gradient(45deg, #FC466B, #3F5EFB); }
+
+
+
+
+
+			#row_banner
 			{
-				background-color: #b2e8a3;
+				//background-color: #b2e8a3;
 				height: 10vh;
 			}
-			
-			
-			
+
+
+
 			#form_buttons
 			{
 				background-color: #e8b3a3;
@@ -61,7 +72,7 @@
 
 			#textinput_name
 			{
-				padding-inline-start: 20px;
+				text-align: center;
 
 				width: 10%;
 				height: 45px;
@@ -118,7 +129,7 @@
 			{
 				/* position: relative; */
 			
-				background: #a3e8aa; /* Цвет фона */
+				//background: #a3e8aa; /* Цвет фона */
 				/* border: solid 1px black; /* Параметры рамки */
 
 				//background-color: #a3e8cc;
@@ -130,11 +141,6 @@
 				//margin: auto;
 			}
 
-			.container-fluid
-			{
-				padding: 0px;
-
-			}
 
 			
 		</style>
@@ -143,20 +149,52 @@
 		
 		
 		<div class="container-fluid">
-			<div  class="row  ">
-				<div id="div_banner" class="col-12  ">
-					
+			<div id="row_banner" class="row text-center grad-purple-deep-orange">
+				<div  class="col-12 m-auto ">
+
+					<span>123</span>
+
 				</div>
 			</div>
 		</div>
 		
-		
+
+		<script>
+
+			function Try_Send_Msg()
+			{
+				// Проверка длины логина
+				// Проверка длины сообщения
+
+				let username = $("#textinput_name").val();
+				let msg      = $("#textinput_msg").val();
+
+				alert(username);
+				alert(msg);
+
+
+
+				// Вызов аякса для добавки
+
+				// Вызов аякса для обновления
+
+
+				//Очищение строки сообщения
+				//
+
+				//onsubmit="Exec_AJAX( 'Main_ajax.php' , '#form_get_tbl' , '#div_result' )"
+
+			}
+
+		</script>
+
+
 		<!-- Форма -->
 		<div class="container-fluid">
 			<div id="form_buttons" class="row text-center">
 				<div class="col-12 m-auto ">
 
-					<form method="POST" id="form_get_tbl" action="javascript:void(null);" onsubmit="Exec_AJAX( 'Main_ajax.php' , '#form_get_tbl' , '#div_result' )">
+					<form method="POST" id="form_get_tbl" action="javascript:Try_Send_Msg();" >
 						<fieldset>
 
 							<!-- Text input-->
@@ -166,10 +204,11 @@
 
 							<input id="textinput_msg" name="url" type="text"
 										placeholder="Сообщение" size="80"
-										value="" >
+										value="test    msg 123" >
 
 							<!-- Кнопка -->
 							<input type="submit" value="Отправить"/>
+
 						</fieldset>
 					</form>
 				</div>
@@ -182,6 +221,8 @@
 			<div class="row  text-center">
 				<div id="div_table" class="col-12  m-auto ">
 
+					<?php include "Echo_Table.php"; ?>
+
 				</div>
 			</div>
 		</div>
@@ -192,12 +233,9 @@
 		
 		<!-- Результаты -->
 		<div class="container-fluid">
-			<div class="row  ">
-				<div class="col-12  ">
-				
-					<div id="div_footer">
+			<div class="row grad-plum ">
+				<div id="div_footer" class="col-12  ">
 
-					</div>
 
 				</div>
 			</div>
@@ -254,7 +292,14 @@
 		
 		
 
-		
+
+
+
+
+
+
+
+
 		<!-- ########################################################################################################### -->
 		
 		<!-- Все по аяксу -->
