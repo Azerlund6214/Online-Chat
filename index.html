@@ -27,24 +27,24 @@
 		<!-- *** BOOTSTRAP CDN *** -->
 		
 		
-			<link href="table_style.css" rel="stylesheet" type="text/css">
+		<link href="table_style.css" rel="stylesheet" type="text/css">
 		<!--
         -->
 			
     </head>
 	
 
-	<body>
+	<body class="grad-sublime-vivid">
 
 		
 		<style>
 
-			.grad-35 { background-image: linear-gradient(45deg, #2A9EFF, #FF4968); }
+			.grad-35 				 { background-image: linear-gradient(45deg, #2A9EFF, #FF4968); }
 			.grad-cyan-dark-green 	 { background-image: linear-gradient(45deg, #0097a7, #b2ff59); }
 			.grad-purple-deep-orange { background-image: linear-gradient(45deg, #8e24aa, #ff6e40); }
 			.grad-plum 				 { background-image: linear-gradient(45deg, #e35c67, #381ce2); }
 			.grad-passion-fruit		 { background-image: linear-gradient(45deg, #8137F7, #F6AB3E); }
-			.grad-sublime-vivid 	 	{ background-image: linear-gradient(45deg, #FC466B, #3F5EFB); }
+			.grad-sublime-vivid 	 { background-image: linear-gradient(45deg, #FC466B, #3F5EFB); }
 
 
 
@@ -60,7 +60,7 @@
 
 			#row_buttons
 			{
-				background-color: #e8b3a3;
+				//background-color: #e8b3a3;
 				
 				height: 10vh;
 				//min-height: 100px;
@@ -106,7 +106,7 @@
 
 			#div_table
 			{
-				background-color: #a7a3e8;
+				//background-color: #a7a3e8;
 
 				padding: 16px;
 
@@ -221,24 +221,23 @@
 
 
 
-		
-		
-		<div class="container-fluid">
-			<div id="row_banner" class="row text-center grad-purple-deep-orange">
+
+
+		<div class="container-fluid  ">
+
+
+			<!-- Баннер -->
+			<div id="row_banner" class="row text-center ">
 				<div  class="col-12 m-auto ">
 
-					<span>123</span>
+					<span style="font-size: 24px; font-weight: bold;">Online-Chat</span>
 
 				</div>
 			</div>
-		</div>
-		
+			<!-- /Баннер -->
 
 
-
-
-		<!-- Форма -->
-		<div class="container-fluid">
+			<!-- Форма -->
 			<div id="row_buttons" class="row text-center">
 				<div class="col-12 m-auto ">
 
@@ -250,8 +249,8 @@
 								   value="<?php require_once( 'libs/SF_CLASS.php' ); echo SF::Get_Random_String_Readable( random_int(4,8)); ?>" >
 
 							<input id="textinput_msg" name="message" type="text"
-										placeholder="Сообщение" size="80"
-										value="Message 123" >
+								   placeholder="Сообщение" size="80"
+								   value="Message 123" >
 
 							<!-- Кнопка -->
 							<input type="submit" value="Отправить"/>
@@ -260,32 +259,37 @@
 					</form>
 				</div>
 			</div>
-		</div>
-		<!-- /Форма -->
+			<!-- /Форма -->
 
 
-		<!-- Таблица -->
-		<div class="container-fluid">
+			<!-- Таблица -->
 			<div class="row  text-center">
 				<div id="div_table" class="col-12  m-auto ">
 
-						<?php include "Echo_Table.php"; ?>
+					<?php include "Echo_Table.php"; ?>
 				</div>
 			</div>
-		</div>
-		<!-- /Таблица -->
-		
+			<!-- /Таблица -->
 
-		<!-- Футер -->
-		<div class="container-fluid">
-			<div class="row grad-plum ">
+
+			<!-- Футер -->
+			<div class="row  ">
 				<div id="div_footer" class="col-12  ">
 
 
 				</div>
 			</div>
+			<!-- Футер -->
+
+
 		</div>
-		<!-- Футер -->
+
+
+
+
+
+
+
 
 
 
