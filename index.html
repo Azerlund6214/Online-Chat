@@ -211,7 +211,7 @@
 					return;
 				}
 
-				
+
 				// Вызов аякса для добавки
 				Exec_AJAX( 'Add_Msg.php' , '#form_get_tbl' , '#div_footer' );
 
@@ -253,11 +253,11 @@
 
 							<input id="textinput_name" name="nickname" type="text"
 								   placeholder="Логин" size="20"
-								   value="Аноним" >
+								   value="<?php require_once( 'libs/SF_CLASS.php' ); echo SF::Get_Random_String_Readable( random_int(4,8)); ?>" >
 
 							<input id="textinput_msg" name="message" type="text"
 										placeholder="Сообщение" size="80"
-										value="test    msg 123" >
+										value="Message 123" >
 
 							<!-- Кнопка -->
 							<input type="submit" value="Отправить"/>
