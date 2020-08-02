@@ -25,12 +25,13 @@
 		<script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/popper.min.js"></script>
 		<script src = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
 		<!-- *** BOOTSTRAP CDN *** -->
-		
-		
+
+		<!-- ======================================== -->
+
+
 		<link href="table_style.css" rel="stylesheet" type="text/css">
-		<!--
-        -->
-			
+
+
     </head>
 	
 
@@ -51,101 +52,53 @@
 			.grad-passion-fruit		 { background-image: linear-gradient(45deg, #8137F7, #F6AB3E); }
 			.grad-sublime-vivid 	 { background-image: linear-gradient(45deg, #FC466B, #3F5EFB); }
 
-
-
-
+			/* ############ */
 
 			#row_banner
 			{
-				//background-color: #b2e8a3;
 				height: 10vh;
 			}
 
+			/* ############ */
 
-
-			#row_buttons
+			#row_form
 			{
-				//background-color: #e8b3a3;
-				
 				height: 10vh;
-				//min-height: 100px;
-
-
-				//#form_buttons div input[type=text]
 			}
 
+			input
+			{
+				height: 45px;
+				border-radius: 20px;
+			}
 
 			#textinput_name
 			{
 				text-align: center;
-
 				width: 10%;
-				height: 45px;
-
-				border-radius: 20px;
-
 			}
 
 			#textinput_msg
 			{
 				padding-inline-start: 30px;
-
 				width: 50%;
-				height: 45px;
-
-				border-radius: 20px;
 			}
 
-			#form_buttons div input[type=submit]
-			{
-
-				height: 45px;
-
-				border-radius: 15px;
-
-			}
-
-
-
-
+			/* ############ */
 
 			#div_table
 			{
-				//background-color: #a7a3e8;
-
 				padding: 16px;
 
 				height: 75vh;
 				overflow: auto; //Прокрутка
-
-
 			}
 
-			
-			
-			
-			
-
+			/* ############ */
 
 			#row_footer
 			{
-
-			}
-
-			#div_footer
-			{
-				/* position: relative; */
-			
-				//background: #a3e8aa; /* Цвет фона */
-				/* border: solid 1px black; /* Параметры рамки */
-
-				//background-color: #a3e8cc;
 				height: 5vh;
-
-				//width: 100%;
-				//height: auto;
-				
-				//margin: auto;
 			}
 
 
@@ -154,7 +107,7 @@
 
 
 
-		<!-- Все по аяксу -->
+		<!-- Универсальная функция аякса -->
 		<script type="text/javascript" language="javascript">
 
 			function Exec_AJAX( path , form_data , div_id )
@@ -168,13 +121,13 @@
 
 		</script>
 
-		<script>
 
+		<script type="text/javascript" language="javascript">
+
+			// Вызов аякса для обновления
 			function Refresh_Table()
 			{
-				// Вызов аякса для обновления
 				Exec_AJAX( 'Echo_Table.php' , '' , '#div_table' );
-
 				//alert("обнова");
 			}
 
@@ -242,8 +195,9 @@
 			<!-- /Баннер -->
 
 
+
 			<!-- Форма -->
-			<div id="row_buttons" class="row text-center">
+			<div id="row_form" class="row text-center">
 				<div class="col-12 m-auto ">
 
 					<form method="POST" id="form_get_tbl" action="javascript:Try_Send_Msg();" >
@@ -255,7 +209,7 @@
 
 							<input id="textinput_msg" name="message" type="text"
 								   placeholder="Сообщение" size="80"
-								   value="Message 123" >
+								   value="" >
 
 							<!-- Кнопка -->
 							<input type="submit" value="Отправить"/>
@@ -267,20 +221,24 @@
 			<!-- /Форма -->
 
 
+
 			<!-- Таблица -->
 			<div class="row  text-center">
 				<div id="div_table" class="col-12  m-auto ">
 
 					<?php include "Echo_Table.php"; ?>
+
 				</div>
 			</div>
 			<!-- /Таблица -->
 
 
-			<!-- Футер -->
-			<div class="row  ">
-				<div id="div_footer" class="col-12  ">
 
+			<!-- Футер -->
+			<div id="row_footer" class="row  text-center">
+				<div  class="col-12 m-auto ">
+
+					<span style="font-size: 14px; font-weight: bold;">https://github.com/Azerlund6214/Online-Chat</span>
 
 				</div>
 			</div>

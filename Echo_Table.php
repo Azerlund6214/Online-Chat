@@ -1,17 +1,13 @@
 <?php
 
 
-
-
-    $debug_mode = true; // Выводить все переменные и не делать реальный редирект в конце
-    #$debug_mode = false;
-
-
     $messages_limit = 30;
 
 
-    include "config.php";
+    #####
 
+
+    include "config.php";
 
     require_once( "libs/db_controller_mysqli.php" );
     require_once( "libs/SF_CLASS.php" );
@@ -19,35 +15,17 @@
 
     #####
 
-    //if( ! isset($_GET['url_for_mon']) )
-    //    exit("Нет get параметра url_for_mon");
-
-
-
-    #####
 
     $DBC = new DB_Controller();
     $DBC -> Connect( $db_host, $db_user , $db_pass );
     $DBC -> Select_db( $db_name );
     //$DBC -> Get_error();
 
-    //echo "<br>Подключились к бд";
-
-    #####
-
-    //exit("123");
-
-
-
     $sql = "SELECT * FROM Messages ORDER BY id DESC LIMIT $messages_limit";
     $result = $DBC -> Query($sql , "all");
-    //$DBC -> Get_error();
-    //SF::PRINTER($result); exit;
 
 
-    //echo "<br>Получили сообщения из главной таблицы<hr color='red'>";
-
-
+    #####
 
 
     echo '  <link rel="stylesheet" type="text/css" href="table_style.css">
@@ -79,8 +57,7 @@
     echo "</table>";
 
 
-
     #####
 
-	
+
 ?>
