@@ -44,12 +44,12 @@
     //exit("123");
 
 
-    echo "<br>Получили сообщения из главной таблицы<hr color='red'>";
+    //echo "<br>Получили сообщения из главной таблицы<hr color='red'>";
 
     $sql = "INSERT INTO Messages ( author_nickname ,   message  )
                         VALUES (     '$nickname'   ,  '$message'  )";
     $DBC -> Exec( $sql );
-    $DBC -> Get_error();
+    //$DBC -> Get_error();
 
 
     //exit("123");

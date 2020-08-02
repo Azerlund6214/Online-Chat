@@ -109,10 +109,18 @@
 
 				background-color: #a7a3e8;
 				height: 70vh;
+				padding: 20px;
 
 			}
 
+			#div_table
+			{
 
+				height: 65vh;
+				overflow: auto; //Прокрутка
+
+
+			}
 
 			
 			
@@ -187,21 +195,28 @@
 
 				if( username.length > 32 )
 				{
-					alert("Имя слишком длинноое (не больше 16симв) У вас: "+username.length);
+					alert("Имя слишком длинноое (не больше 16 симв). У вас: "+username.length);
 					return;
 				}
 
 				if( msg.length > 128 )
 				{
-					alert("Сообщение слишком длинноое (не больше 128симв) У вас: "+msg.length);
+					alert("Сообщение слишком длинноое (не больше 128 симв). У вас: "+msg.length);
 					return;
 				}
 
+				if( msg.length <= 4  )
+				{
+					alert("Сообщение слишком Короткое (не менее 4 симв). У вас: "+msg.length);
+					return;
+				}
+
+				
 				// Вызов аякса для добавки
-				Exec_AJAX( 'Add_Msg.php' , '#form_get_tbl' , '#div_footer' )
+				Exec_AJAX( 'Add_Msg.php' , '#form_get_tbl' , '#div_footer' );
 
 				// Вызов аякса для обновления
-				Exec_AJAX( 'Echo_Table.php' , '' , '#div_table' )
+				Exec_AJAX( 'Echo_Table.php' , '' , '#div_table' );
 
 				//Очищение строки сообщения
 				$("#textinput_msg" ).val("");
@@ -260,8 +275,7 @@
 			<div class="row  text-center">
 				<div id="div_table" class="col-12  m-auto ">
 
-					<?php include "Echo_Table.php"; ?>
-
+						<?php include "Echo_Table.php"; ?>
 				</div>
 			</div>
 		</div>
