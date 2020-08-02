@@ -7,7 +7,7 @@
     #$debug_mode = false;
 
 
-    $messages_limit = 20;
+    $messages_limit = 30;
 
 
     include "config.php";

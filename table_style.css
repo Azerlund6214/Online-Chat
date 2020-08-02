@@ -1,7 +1,14 @@
 	
 	/* https://www.cssportal.com/html-table-generator/ */
 	/* https://divtable.com/table-styler/ */
-	
+
+
+	table.result_table td:nth-child(1) { width: 15%; }
+	table.result_table td:nth-child(2) { width: 15%; }
+	table.result_table td:nth-child(3) { width: 70%; }
+
+
+
 	table.result_table {
 	  border: 2px solid #1C6EA4;
 	  background-color: #EEEEEE;

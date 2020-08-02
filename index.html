@@ -106,15 +106,9 @@
 
 			#div_table
 			{
-
 				background-color: #a7a3e8;
-				height: 70vh;
-				padding: 20px;
 
-			}
-
-			#div_table
-			{
+				padding: 16px;
 
 				height: 75vh;
 				overflow: auto; //Прокрутка
@@ -216,7 +210,7 @@
 				Exec_AJAX( 'Add_Msg.php' , '#form_get_tbl' , '#div_footer' );
 
 				// Вызов аякса для обновления = срабатывает НЕ ВСЕГДА!!! Иногда приходится ждать обновления по таймеру.
-				Exec_AJAX( 'Echo_Table.php' , '#form_get_tbl' , '#div_table' );
+				Exec_AJAX( 'Echo_Table.php' , '' , '#div_table' );
 
 				//Очищение строки сообщения
 				$("#textinput_msg" ).val("");
