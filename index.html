@@ -27,9 +27,9 @@
 		<!-- *** BOOTSTRAP CDN *** -->
 		
 		
-        <!-- 
-			<link href="1.css" rel="stylesheet" type="text/css">
-		-->
+			<link href="table_style.css" rel="stylesheet" type="text/css">
+		<!--
+        -->
 			
     </head>
 	
@@ -62,7 +62,7 @@
 			{
 				background-color: #e8b3a3;
 				
-				height: 15vh;
+				height: 10vh;
 				//min-height: 100px;
 
 
@@ -116,7 +116,7 @@
 			#div_table
 			{
 
-				height: 65vh;
+				height: 75vh;
 				overflow: auto; //Прокрутка
 
 
@@ -215,8 +215,8 @@
 				// Вызов аякса для добавки
 				Exec_AJAX( 'Add_Msg.php' , '#form_get_tbl' , '#div_footer' );
 
-				// Вызов аякса для обновления
-				Exec_AJAX( 'Echo_Table.php' , '' , '#div_table' );
+				// Вызов аякса для обновления = срабатывает НЕ ВСЕГДА!!! Иногда приходится ждать обновления по таймеру.
+				Exec_AJAX( 'Echo_Table.php' , '#form_get_tbl' , '#div_table' );
 
 				//Очищение строки сообщения
 				$("#textinput_msg" ).val("");
@@ -292,59 +292,6 @@
 			</div>
 		</div>
 		<!-- Футер -->
-
-
-		
-		<style>
-			/* https://www.cssportal.com/html-table-generator/ */
-			/* https://divtable.com/table-styler/ */
-			
-			table.result_table {
-			  border: 2px solid #1C6EA4;
-			  background-color: #EEEEEE;
-			  width: 100%;
-			  text-align: center;
-			  border-collapse: collapse;
-			}
-			
-			
-			table.result_table td, table.result_table th {
-			  border: 1px solid #AAAAAA;
-			  padding: 3px 2px;
-			}
-			table.result_table tbody td {
-			  font-size: 20px;
-			}
-			table.result_table tr:nth-child(even) {
-			  background: #D0E4F5;
-			}
-			
-			
-			table.result_table thead {
-			  font-size: 20px;
-			  background: #1C6EA4;
-			  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-			  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-			  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-			  border-bottom: 2px solid #444444;
-			}
-			table.result_table thead th {
-			  
-			  font-weight: bold;
-			  color: #FFFFFF;
-			  text-align: center;
-			  border-left: 2px solid #D0E4F5;
-			}
-			table.result_table thead th:first-child {
-			  border-left: none;
-			}
-
-
-		</style>
-		
-		
-		
-
 
 
 
