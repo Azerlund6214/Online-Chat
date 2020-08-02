@@ -7,6 +7,8 @@
     #$debug_mode = false;
 
 
+    $messages_limit = 20;
+
 
     include "config.php";
 
@@ -29,7 +31,7 @@
     $DBC -> Select_db( $db_name );
     //$DBC -> Get_error();
 
-    echo "<br>Подключились к бд";
+    //echo "<br>Подключились к бд";
 
     #####
 
@@ -37,13 +39,13 @@
 
 
 
-    $sql = "SELECT * FROM Messages ORDER BY id DESC LIMIT 10";
+    $sql = "SELECT * FROM Messages ORDER BY id DESC LIMIT $messages_limit";
     $result = $DBC -> Query($sql , "all");
     //$DBC -> Get_error();
     //SF::PRINTER($result); exit;
 
 
-    echo "<br>Получили сообщения из главной таблицы<hr color='red'>";
+    //echo "<br>Получили сообщения из главной таблицы<hr color='red'>";
 
 
 

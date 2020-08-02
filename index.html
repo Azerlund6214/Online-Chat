@@ -163,9 +163,22 @@
 
 		<script>
 
-			function Try_Send_Msg()
+			function Refresh_Table()
 			{
+				// Вызов аякса для обновления
+				Exec_AJAX( 'Echo_Table.php' , '' , '#div_table' );
 
+				//alert("обнова");
+			}
+
+			let timerId = setInterval( () => Refresh_Table(), 8000);
+
+
+
+
+
+			function Try_Send_Msg(  )
+			{
 				let username = $("#textinput_name").val();
 				let msg      = $("#textinput_msg" ).val();
 
@@ -184,24 +197,15 @@
 					return;
 				}
 
-
 				// Вызов аякса для добавки
 				Exec_AJAX( 'Add_Msg.php' , '#form_get_tbl' , '#div_footer' )
 
-
-				// Вызов аякса для обновления   РАБОТАЕТ
+				// Вызов аякса для обновления
 				Exec_AJAX( 'Echo_Table.php' , '' , '#div_table' )
-
-
-
-
-
-				//onsubmit="Exec_AJAX( 'Main_ajax.php' , '#form_get_tbl' , '#div_result' )"
-
-
 
 				//Очищение строки сообщения
 				$("#textinput_msg" ).val("");
+
 			}
 
 		</script>
@@ -247,10 +251,11 @@
 					</form>
 				</div>
 			</div>
-			<!-- /Форма -->
 		</div>
+		<!-- /Форма -->
 
-		<!-- Кнопка и чекбоксы, в двух строках -->
+
+		<!-- Таблица -->
 		<div class="container-fluid">
 			<div class="row  text-center">
 				<div id="div_table" class="col-12  m-auto ">
@@ -260,12 +265,10 @@
 				</div>
 			</div>
 		</div>
-		<!-- /Чекбоксы -->
+		<!-- /Таблица -->
 		
-		
-		
-		
-		<!-- Результаты -->
+
+		<!-- Футер -->
 		<div class="container-fluid">
 			<div class="row grad-plum ">
 				<div id="div_footer" class="col-12  ">
@@ -274,7 +277,9 @@
 				</div>
 			</div>
 		</div>
-		
+		<!-- Футер -->
+
+
 		
 		<style>
 			/* https://www.cssportal.com/html-table-generator/ */
@@ -329,89 +334,6 @@
 
 
 
-
-
-
-
-
-		<!-- ########################################################################################################### -->
-
-
-
-		<!-- ########################################################################################################### -->
-		
-		
-		
-		
-		
-		<!--
-		<div class="download-table">
-				<table>
-					<thead>
-						<tr class="w2">
-							<td><strong>Название</strong></td>
-							<td><strong>Платформа</strong></td>
-							<td><strong>Разрядность</strong></td>
-							<td><strong>Русская версия</strong></td>
-							<td><strong>Формат</strong></td>
-							<td><strong>Загрузка</strong></td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Microsoft Word 2016</td>
-							<td>Windows 10</td>
-							<td>32Bit / 64Bit</td>
-							<td><i class="fa fa-check"></i></td>
-							<td>.exe</td>
-							<td>
-								<a class="" target="_blank" href=""><i class="fa fa-hdd-o"></i> <span>Скачать</span></a>
-							</td>
-						</tr>
-						<tr>
-							<td>Microsoft Word 2016</td>
-							<td>Windows 8.1</td>
-							<td>32Bit / 64Bit</td>
-							<td><i class="fa fa-check"></i></td>
-							<td>.exe</td>
-							<td>
-								<a class="" target="_blank" href=""><i class="fa fa-hdd-o"></i> <span>Скачать</span></a>
-							</td>
-						</tr>
-						<tr>
-							<td>Microsoft Word 2016</td>
-							<td>Windows 7</td>
-							<td>32Bit / 64Bit</td>
-							<td><i class="fa fa-check"></i></td>
-							<td>.exe</td>
-							<td>
-								<a class="" target="_blank" href=""><i class="fa fa-hdd-o"></i> <span>Скачать</span></a>
-							</td>
-						</tr>
-						<tr>
-							<td>Microsoft Word 2016</td>
-							<td>Windows&nbsp;XP</td>
-							<td>32Bit / 64Bit</td>
-							<td><i class="fa fa-check"></i></td>
-							<td>.exe</td>
-							<td>
-								<a class="" target="_blank" href=""><i class="fa fa-hdd-o"></i> <span>Скачать</span></a>
-							</td>
-						</tr>
-						<tr>
-							<td>Microsoft Word 2016</td>
-							<td>Windows Vista</td>
-							<td>32Bit / 64Bit</td>
-							<td><i class="fa fa-check"></i></td>
-							<td>.exe</td>
-							<td>
-								<a class="" target="_blank" href=""><i class="fa fa-hdd-o"></i> <span>Скачать</span></a>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		-->
 	
 	</body>
 
