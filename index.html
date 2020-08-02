@@ -34,7 +34,12 @@
     </head>
 	
 
-	<body class="grad-sublime-vivid">
+	<?php
+		$arr_gradients = Array( "grad-35" , "grad-cyan-dark-green" , "grad-purple-deep-orange" , "grad-plum" , "grad-passion-fruit" , "grad-sublime-vivid" );
+		$target_grad = $arr_gradients[array_rand( $arr_gradients , 1 )];
+	?>
+
+	<body class="<?php echo $target_grad; ?>">
 
 		
 		<style>
