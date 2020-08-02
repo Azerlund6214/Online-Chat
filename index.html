@@ -58,7 +58,7 @@
 
 
 
-			#form_buttons
+			#row_buttons
 			{
 				background-color: #e8b3a3;
 				
@@ -163,15 +163,27 @@
 
 			function Try_Send_Msg()
 			{
-				// Проверка длины логина
-				// Проверка длины сообщения
 
 				let username = $("#textinput_name").val();
-				let msg      = $("#textinput_msg").val();
+				let msg      = $("#textinput_msg" ).val();
 
-				alert(username);
-				alert(msg);
+				//alert(username);
+				//alert(msg);
 
+				if( username.length > 32 )
+				{
+					alert("Имя слишком длинноое (не больше 16симв) У вас: "+username.length);
+					return;
+				}
+
+				if( msg.length > 128 )
+				{
+					alert("Сообщение слишком длинноое (не больше 128симв) У вас: "+msg.length);
+					return;
+				}
+
+
+				Exec_AJAX( 'Add_Msg.php' , '#form_get_tbl' , 'div_footer' )
 
 
 				// Вызов аякса для добавки
@@ -179,11 +191,14 @@
 				// Вызов аякса для обновления
 
 
-				//Очищение строки сообщения
-				//
+
 
 				//onsubmit="Exec_AJAX( 'Main_ajax.php' , '#form_get_tbl' , '#div_result' )"
 
+
+
+				//Очищение строки сообщения
+				$("#textinput_msg" ).val("");
 			}
 
 		</script>
@@ -191,18 +206,17 @@
 
 		<!-- Форма -->
 		<div class="container-fluid">
-			<div id="form_buttons" class="row text-center">
+			<div id="row_buttons" class="row text-center">
 				<div class="col-12 m-auto ">
 
 					<form method="POST" id="form_get_tbl" action="javascript:Try_Send_Msg();" >
 						<fieldset>
 
-							<!-- Text input-->
-							<input id="textinput_name" name="url" type="text"
+							<input id="textinput_name" name="nickname" type="text"
 								   placeholder="Логин" size="20"
 								   value="Аноним" >
 
-							<input id="textinput_msg" name="url" type="text"
+							<input id="textinput_msg" name="message" type="text"
 										placeholder="Сообщение" size="80"
 										value="test    msg 123" >
 
