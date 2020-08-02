@@ -144,20 +144,22 @@
 
 			
 		</style>
-		
-		
-		
-		
-		<div class="container-fluid">
-			<div id="row_banner" class="row text-center grad-purple-deep-orange">
-				<div  class="col-12 m-auto ">
 
-					<span>123</span>
 
-				</div>
-			</div>
-		</div>
-		
+
+		<!-- Все по аяксу -->
+		<script type="text/javascript" language="javascript">
+
+			function Exec_AJAX( path , form_data , div_id )
+			{
+				$.ajax({  type: 'POST',
+					url: path,
+					data: $( form_data ).serialize(),
+					success: function(data) { $( div_id ).html(data); },
+					error:   function(xhr, str){ alert('Возникла ошибка: ' + xhr.responseCode); }				});
+			}
+
+		</script>
 
 		<script>
 
@@ -183,12 +185,13 @@
 				}
 
 
-				Exec_AJAX( 'Add_Msg.php' , '#form_get_tbl' , 'div_footer' )
-
-
 				// Вызов аякса для добавки
+				Exec_AJAX( 'Add_Msg.php' , '#form_get_tbl' , '#div_footer' )
 
-				// Вызов аякса для обновления
+
+				// Вызов аякса для обновления   РАБОТАЕТ
+				Exec_AJAX( 'Echo_Table.php' , '' , '#div_table' )
+
 
 
 
@@ -202,6 +205,23 @@
 			}
 
 		</script>
+
+
+
+		
+		
+		<div class="container-fluid">
+			<div id="row_banner" class="row text-center grad-purple-deep-orange">
+				<div  class="col-12 m-auto ">
+
+					<span>123</span>
+
+				</div>
+			</div>
+		</div>
+		
+
+
 
 
 		<!-- Форма -->
@@ -315,22 +335,9 @@
 
 
 		<!-- ########################################################################################################### -->
-		
-		<!-- Все по аяксу -->
-		<script type="text/javascript" language="javascript">
-			
-			function Exec_AJAX( path , form_data , div_id )
-			{
-				$.ajax({  type: 'POST',
-						  url: path,
-						  data: $( form_data ).serialize(),
-						  success: function(data) { $( div_id ).html(data); },
-						  error:   function(xhr, str){ alert('Возникла ошибка: ' + xhr.responseCode); }				});
-			}
-			
-		</script>
-		
-		
+
+
+
 		<!-- ########################################################################################################### -->
 		
 		

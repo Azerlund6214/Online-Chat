@@ -76,17 +76,7 @@
     echo    "</tbody>";
     echo "</table>";
 
-    exit("123");
 
-
-
-
-    $sql = "INSERT INTO mon_results ( post_url ,      iteration        , count_likes      , count_views )
-                               VALUES(  '$post_url' , $Current_iteration , '$current_likes' , '$current_views' )";
-    $DBC -> Exec( $sql );
-
-
-    exit("<hr>Exit");
 
     #####
 
